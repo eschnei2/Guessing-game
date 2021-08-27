@@ -47,13 +47,13 @@ namespace GuessingGame
                 Console.WriteLine("WRONG WRONG WRONG!");
                 guessCount++;
                 Console.WriteLine("You have " + (guessAmount-guessCount) + " guesses left"  );
-                Console.WriteLine("You guessed too low"+randomNum);
+                Console.WriteLine("You guessed too low");
                 }
                 else{
                 Console.WriteLine("WRONG WRONG WRONG!");
                 guessCount++;
                 Console.WriteLine("You have " + (guessAmount-guessCount) + " guesses left"  );
-                Console.WriteLine("You guessed too high"+randomNum);
+                Console.WriteLine("You guessed too high");
                 }
                 if(guessCount != guessAmount){
                 Console.WriteLine("WRONG WRONG WRONG!");
