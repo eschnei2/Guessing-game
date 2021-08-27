@@ -10,7 +10,8 @@ namespace GuessingGame
 
             string userAnswer = Console.ReadLine();
             int parseAnswer = int.Parse(userAnswer);
-            int randomNum = 42;
+            Random ranN = new Random();
+            int randomNum = ranN.Next(1, 101);
             bool done = false;
             int guessCount = 1;
 
