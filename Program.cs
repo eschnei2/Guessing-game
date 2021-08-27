@@ -24,8 +24,8 @@ namespace GuessingGame
             }
             else {
                 Console.WriteLine("WRONG WRONG WRONG!");
+                Console.WriteLine("You have " + (4-guessCount) + " guesses left"  );
                 guessCount++;
-                Console.WriteLine("You have guessed " + guessCount + " times. Try again." );
                 parseAnswer = int.Parse(Console.ReadLine());
             }
 
