@@ -6,9 +6,10 @@ namespace GuessingGame
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Choose a difficutly 1 = easy, 2 = Medium, 3 = hard");
+            Console.WriteLine("Choose a difficutly 1 = easy, 2 = Medium, 3 = hard, 4 = cheater ");
             int guessAmount = 0;
             string difficulty = Console.ReadLine();
+            int guessCount = 0;
 
             if(difficulty == "1"){
                 guessAmount = 8;
@@ -19,6 +20,10 @@ namespace GuessingGame
             else if(difficulty == "3"){
                 guessAmount = 4;
             }
+            else {
+                guessAmount = -1;
+            }
+        
 
 
             Console.WriteLine("Guess a secret number between 1 and 100");
@@ -28,7 +33,6 @@ namespace GuessingGame
             Random ranN = new Random();
             int randomNum = ranN.Next(1, 101);
             bool done = false;
-            int guessCount = 0;
 
 
             while (guessCount != guessAmount && done == false)
@@ -52,6 +56,7 @@ namespace GuessingGame
                 Console.WriteLine("You guessed too high"+randomNum);
                 }
                 if(guessCount != guessAmount){
+                Console.WriteLine("WRONG WRONG WRONG!");
                 parseAnswer = int.Parse(Console.ReadLine());
                 }
 
