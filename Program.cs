@@ -13,10 +13,11 @@ namespace GuessingGame
             Random ranN = new Random();
             int randomNum = ranN.Next(1, 101);
             bool done = false;
-            int guessCount = 1;
+            int guessCount = 0;
+            int guessAmount = 4;
 
 
-            while (guessCount < 4 && done == false)
+            while (guessCount != guessAmount && done == false)
 
             if (parseAnswer == randomNum)
             {
@@ -24,12 +25,23 @@ namespace GuessingGame
                 done = true;
             }
             else {
+                if(randomNum > parseAnswer){
                 Console.WriteLine("WRONG WRONG WRONG!");
-                Console.WriteLine("You have " + (4-guessCount) + " guesses left"  );
                 guessCount++;
+                Console.WriteLine("You have " + (4-guessCount) + " guesses left"  );
+                Console.WriteLine("You guessed too low"+randomNum);
+                }
+                else{
+                Console.WriteLine("WRONG WRONG WRONG!");
+                guessCount++;
+                Console.WriteLine("You have " + (4-guessCount) + " guesses left"  );
+                Console.WriteLine("You guessed too high"+randomNum);
+                }
+                if(guessCount != guessAmount){
                 parseAnswer = int.Parse(Console.ReadLine());
-            }
+                }
 
+            }
 
         }
     }
